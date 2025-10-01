@@ -1,0 +1,102 @@
+/* =============================================================================
+   Particles.js Styles
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-image: url("");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* ---- Canvas para partículas ---- */
+
+canvas {
+  display: block;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 100;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #00ff88, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-content #developerSpan {
+  color:#00ff88;
+}
+
+.hero-content #FullStackSpan {
+  color: #00d4ff
+  
+}
+.cta-button {
+  background: linear-gradient(45deg, #00ff88, #00d4ff);
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+}
+
+
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+}

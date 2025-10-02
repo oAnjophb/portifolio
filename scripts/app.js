@@ -96,34 +96,34 @@ particlesJS('particles-js',
 
 // Funcionalidade do menu hamburger
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger-btn');
+    const menuToggle = document.getElementById('menu-toggle-btn');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Função para toggle do menu
     function toggleMenu() {
-        const isOpen = hamburger.classList.contains('active');
+        const isOpen = menuToggle.classList.contains('active');
         
-        hamburger.classList.toggle('active');
+        menuToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
         document.body.classList.toggle('menu-open');
         
         // Atualiza atributos ARIA
-        hamburger.setAttribute('aria-expanded', !isOpen);
-        hamburger.setAttribute('aria-label', !isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+        menuToggle.setAttribute('aria-expanded', !isOpen);
+        menuToggle.setAttribute('aria-label', !isOpen ? 'Close navigation menu' : 'Open navigation menu');
     }
 
     // Função para fechar o menu
     function closeMenu() {
-        hamburger.classList.remove('active');
+        menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.classList.remove('menu-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
     }
 
-    // Toggle do menu ao clicar no hamburger
-    hamburger.addEventListener('click', toggleMenu);
+    // Toggle do menu ao clicar no botão
+    menuToggle.addEventListener('click', toggleMenu);
 
     // Fecha o menu ao clicar em um link
     navLinks.forEach(link => {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fecha o menu ao clicar fora dele
     document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
             closeMenu();
         }
     });
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fecha o menu ao pressionar ESC
         if (e.key === 'Escape') {
             closeMenu();
-            hamburger.focus(); // Retorna o foco para o botão
+            menuToggle.focus(); // Retorna o foco para o botão
         }
         
         // Navegar pelos links com Tab no menu aberto

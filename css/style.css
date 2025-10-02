@@ -1,29 +1,42 @@
+/* =============================================================================
+   CSS Variables - Color System
+   ========================================================================== */
+
+:root {
+  --primary-green: #00ff88;
+  --primary-blue: #00d4ff;
+  
+  --main-background: #111;
+  --header-background: rgba(0, 0, 0, 0.3);
+  --nav-background: rgba(0, 0, 0, 0.95);
+  
+  --main-text-color: #fff;
+  --white-text: white;
+  
+  --header-border: rgba(255, 255, 255, 0.1);
+  
+  --gradient-primary: linear-gradient(45deg, #00ff88, #00d4ff);
+  --gradient-main-content: linear-gradient(135deg, #2e2e2e 0%, #bcbec0 100%);
+  
+  --transition-smooth: all 0.3s ease;
+  --transition-fast: 0.3s ease;
+  --transition-width: width 0.3s ease;
+  --transition-transform: transform 0.3s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
-body {
-  line-height: 1.6;
-}
-
-body.menu-open {
-  overflow: hidden;
-}
-
-a {
   text-decoration: none;
-}
-
-ul {
   list-style: none;
 }
 
 html,
 body {
   width: 100%;
-  background: #111;
+  background: var(--main-background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -32,11 +45,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--header-background);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--header-border);
 }
 
 .container {
@@ -62,10 +75,10 @@ body {
   left: -100%;
   top: 70px;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: var(--nav-background);
   width: 100%;
   text-align: center;
-  transition: 0.3s ease;
+  transition: var(--transition-fast);
   backdrop-filter: blur(10px);
   padding: 2rem 0;
   gap: 1rem;
@@ -82,18 +95,18 @@ body {
 }
 
 .nav-link {
-  color: #fff;
+  color: var(--main-text-color);
   font-size: 1.1rem;
   font-weight: 500;
   padding: 1rem 0;
-  transition: all 0.3s ease;
+  transition: var(--transition-smooth);
   position: relative;
   display: block;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #00ff88;
+  color: var(--primary-green);
 }
 
 .nav-link::after {
@@ -104,8 +117,8 @@ body {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(45deg, #00ff88, #00d4ff);
-  transition: width 0.3s ease;
+  background: var(--gradient-primary);
+  transition: var(--transition-width);
 }
 
 .nav-link:hover::after,
@@ -117,12 +130,12 @@ body {
   padding: 0;
   border: none;
   border-radius: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition-smooth);
   margin-top: 0;
 }
 
 .download-cv a {
-  color: white;
+  color: var(--white-text);
   font-size: 1.1rem;
   padding: 1rem 0;
   display: block;
@@ -133,122 +146,51 @@ body {
   box-shadow: none;
 }
 
-.hamburger {
+.menu-toggle {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
   z-index: 1001;
   background: none;
   border: none;
   outline: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.hamburger:focus {
-  outline: 2px solid #00ff88;
+.menu-toggle:focus {
+  outline: 2px solid var(--primary-green);
   outline-offset: 2px;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 3px 0;
-  transition: 0.3s ease;
-  border-radius: 2px;
+.menu-icon {
+  fill: none;
+  color: var(--main-text-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: var(--transition-transform);
 }
 
-.hamburger.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.menu-toggle.active .menu-icon {
+  transform: rotate(90deg);
 }
 
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .main-content {
-  background: linear-gradient(135deg, #2e2e2e 0%, #bcbec0 100%);
+  background: var(--gradient-main-content);
   min-height: 100vh;
   position: relative;
   z-index: 10;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    padding: 0 2rem;
-  }
-  
-  .hamburger {
-    display: none;
-  }
-
-  .nav-menu {
-    position: static;
-    flex-direction: row;
-    background-color: transparent;
-    width: auto;
-    text-align: left;
-    backdrop-filter: none;
-    padding: 0;
-    gap: 2rem;
-    height: auto;
-    overflow-y: visible;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-
-  .nav-link::after {
-    bottom: -5px;
-    left: 0;
-    transform: none;
-  }
-
-  .nav-link:hover::after,
-  .nav-link:focus::after {
-    width: 100%;
-  }
-
-  .download-cv {
-    margin-top: 0;
-    padding: 0.25rem 0.75rem;
-    border: 1px solid #00ff88;
-    border-radius: 5px;
-  }
-
-  .download-cv a {
-    font-size: 1rem;
-    padding: 0;
-  }
-
-  .download-cv:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 255, 136, 0.3);
-  }
-}
-  
-@media screen and (min-width: 1024px) {
-  .logo img {
-    margin-left: -15rem;
-  }
-
-  .navbar {
-    margin-right: -15rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .logo img {
-    margin-left: -20rem;
-  }
-
-  .navbar {
-    margin-right: -20rem;
-  }
 }

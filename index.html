@@ -17,55 +17,77 @@
       <header class="header">
         <div class="container">
           <div class="logo">
-            <a href="#"><img src="./img/logo.png" alt="Logo" /></a>
+            <a href="#"><img src="./img/logo.png" alt="Ruan Anjos Logo" /></a>
           </div>
-          <nav class="navbar" role="navigation" aria-label="Menu principal">
+          <nav class="navbar">
             <ul class="nav-menu" id="nav-menu">
               <li class="nav-item">
-                <a href="#sobre" class="nav-link">Sobre mim</a>
+                <a href="#about" class="nav-link">Sobre mim</a>
               </li>
               <li class="nav-item">
-                <a href="#portfolio" class="nav-link">Skills</a>
+                <a href="#skills" class="nav-link">Skills</a>
               </li>
               <li class="nav-item">
-                <a href="#servicos" class="nav-link">Projetos</a>
+                <a href="#projects" class="nav-link">Projetos</a>
               </li>
               <li class="nav-item">
-                <a href="#portfolio" class="nav-link">Contato</a>
+                <a href="#contact" class="nav-link">Contato</a>
               </li>
               <li class="download-cv">
                 <a
                   href="./docs/Curriculum Vitae - Desenvolvedor Software.pdf"
                   download
-                  aria-label="Baixar currículo em PDF"
+                  aria-label="Download CV in PDF format"
                   >Baixar CV</a
                 >
               </li>
             </ul>
           </nav>
-          <button 
-            class="hamburger" 
-            id="hamburger-btn"
-            aria-label="Abrir menu de navegação"
+          <button
+            class="menu-toggle"
+            id="menu-toggle-btn"
+            aria-label="Open navigation menu"
             aria-controls="nav-menu"
             aria-expanded="false"
-            type="button">
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
+            type="button"
+          >
+            <svg
+              class="menu-icon"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 12h18M3 6h18M3 18h18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span class="sr-only">Menu</span>
           </button>
         </div>
       </header>
 
-      <div class="hero-content">
-        <h1>Ruan Pedro de Araujo Anjos</h1>
-        <span id="developerSpan">Desenvolvedor</span
-        ><span id="FullStackSpan"> Full Stack</span>
-        <p>Sistemas de Computação - UESPI Parnaíba</p>
-      </div>
+      <section class="hero-content">
+        <h1 id="main-heading">
+          <span id="apresentation"> Olá, eu sou <br /></span>
+          Ruan Anjos
+        </h1>
+        <p class="hero-subtitle">
+          <span id="developer-span" class="developer-text">Desenvolvedor</span
+          ><span id="fullstack-span" class="fullstack-text"> Full Stack</span>
+        </p>
+        <p class="hero-description">Sistemas de Computação - UESPI Parnaíba</p>
+      </section>
     </section>
 
-    <!-- <main class="main-content"></main> -->
+    <main class="main-content">
+      <section id="start"></section>
+
+      <section id="projects"></section>
+    </main>
 
     <script src="scripts/particles/particles.min.js"></script>
     <script src="scripts/app.js"></script>

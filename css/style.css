@@ -17,6 +17,7 @@
 
   --gradient-primary: linear-gradient(45deg, #faea5d, #f5d842);
   --gradient-main-content: linear-gradient(#000000 0%, #0e0d0d 100%);
+  --gradient-experience-content: linear-gradient(#0e0d0d 0%, #000000 100%);
 
   --transition-smooth: all 0.3s ease;
   --transition-fast: 0.3s ease;
@@ -226,7 +227,7 @@ main {
   max-width: 800px;
 }
 .experience {
-  background: var(--secondary-background);
+  background: var(--gradient-experience-content);
   padding: 1.25rem;
   max-width: 800px;
 }
@@ -243,10 +244,11 @@ main {
 }
 
 .start h2::after,
-.experience h2::after {
+.experience h2::after,
+.projects h2::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   width: 25%;
@@ -255,6 +257,10 @@ main {
 }
 
 .start #about {
+  color: var(--primary-yellow);
+}
+
+.experience #me {
   color: var(--primary-yellow);
 }
 
@@ -277,11 +283,22 @@ main {
   margin-bottom: 2rem;
 }
 
+.experience-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 2rem auto 3rem;
+  max-width: 400px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
 .timeline {
   position: relative;
   padding-left: 2rem;
   list-style: none;
   counter-reset: timeline-counter;
+  margin-top: 5rem;
 }
 
 .timeline::before {
@@ -393,4 +410,36 @@ main {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+/* =============================================================================
+   Projects Section
+   ========================================================================== */
+
+.projects {
+  padding: 6rem 2rem;
+  background: rgb(23, 23, 29)
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+  text-align: center;
+  position: relative;
+}
+
+.projects #about {
+  color: var(--primary-yellow);
+}
+
+.projects-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 2rem auto 3rem;
+  max-width: 500px;
+  padding: 0 2rem;
+  font-style: italic;
+  opacity: 0.9;
 }

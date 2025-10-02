@@ -126,7 +126,11 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--primary-yellow);
+  color: var(--text-color);
+}
+
+.nav-link.active {
+  color: var(--text-color);
 }
 
 .nav-link::after {

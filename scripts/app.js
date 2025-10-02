@@ -127,8 +127,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fecha o menu ao clicar em um link
     navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', function() {
+            // Remove a classe active de todos os links
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Adiciona a classe active ao link clicado
+            this.classList.add('active');
+            closeMenu();
+        });
     });
+
+    // Funcionalidade para detectar seção ativa baseada no scroll
+    function setActiveLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPos = window.scrollY + 100; // Offset para considerar o header
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Detecta a seção ativa ao fazer scroll
+    window.addEventListener('scroll', setActiveLink);
+    
+    // Define o primeiro link como ativo inicialmente
+    if (navLinks.length > 0) {
+        navLinks[0].classList.add('active');
+    }
 
     // Fecha o menu ao clicar fora dele
     document.addEventListener('click', function(e) {

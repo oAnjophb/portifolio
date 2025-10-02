@@ -2,13 +2,16 @@
 <html lang="pt">
   <head>
     <meta charset="utf-8" />
-    <title>teste</title>
+    <title>Ruan Anjos | Portifólio</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/hero.css" />
+
+    <!-- import FAVICON -->
+    <link rel="shortcut icon" href="./img/fav-ico.ico" type="image/x-icon" />
   </head>
   <body>
     <section class="hero-section">
@@ -23,6 +26,9 @@
             <ul class="nav-menu" id="nav-menu">
               <li class="nav-item">
                 <a href="#about" class="nav-link">Sobre mim</a>
+              </li>
+              <li class="nav-item">
+                <a href="#experience" class="nav-link">Experiência</a>
               </li>
               <li class="nav-item">
                 <a href="#skills" class="nav-link">Skills</a>
@@ -76,19 +82,193 @@
           Ruan Anjos
         </h1>
         <p class="hero-subtitle">
-          <span id="developer-span" class="developer-text">Desenvolvedor</span
-          ><span id="fullstack-span" class="fullstack-text"> Full Stack</span>
+          <span id="developer-text">Desenvolvedor</span
+          ><span id="fullstack-text"> Full Stack</span>
         </p>
         <p class="hero-description">Sistemas de Computação - UESPI Parnaíba</p>
       </section>
     </section>
 
     <main class="main-content">
-      <section id="start"></section>
+      <section class="start">
+        <h2><span id="about">Sobre</span><span id="me"> Mim</span></h2>
+        <figure id="Profile-photo">
+          <img src="./img/profile.jpeg" alt="Ruan Anjos" />
+        </figure>
 
-      <section id="projects"></section>
+        <p>
+          Graduando CST em Sistemas de Computação, com conhecimeto em
+          desenvolvimento de software e banco de dados. Atuo com
+          TypeScript/Node.js no backend, Vue.js or Next.js no frontend e bancos
+          de dados relacionais e não-relacionais (PostgreSQL, MongoDB, MySQL).
+          Também possuo noções de Docker e versionamento com Git.<br />
+          <br />Tenho forte experiência em modelagem de bancos de dados,
+          otimização de consultas SQL e desenvolvimento de sistemas web
+          escaláveis. <br />
+          <br />Meus projetos focam em melhorar o desempenho, integrar sistemas
+          e trabalhar com grandes volumes de dados. Busco oportunidades para
+          aplicar meus conhecimentos em desenvolvimento back-end, otimização de
+          consulta, e análise de dados, tanto em projetos acadêmicos quanto
+          profissionais. <br />
+          <br />Estou em busca de desafios que me permitam crescer, aprender
+          novas tecnologias, como Blockchain e Web3, e contribuir para soluções
+          inovadoras e eficientes que atendam às necessidades do mercado
+        </p>
+      </section>
+
+      <section class="experience" id="experience">
+        <h2><span id="about">Minha</span><span id="me"> Experiência</span></h2>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <article class="timeline-content">
+              <header>
+                <h3>Data Science</h3>
+                <div class="company">
+                  <!-- <img src="./img/companies/empresa-xyz.png" alt="Empresa XYZ" class="company-logo"> -->
+                  <span class="company-name">UESPI</span>
+                </div>
+                <time class="period" datetime="2024-01/2024-12"
+                  >Agosto 2025 - Presente</time
+                >
+              </header>
+              <p>
+                Desenvolvimento de aplicações web utilizando React, Node.js e
+                MongoDB. Responsável por criar interfaces responsivas e APIs
+                REST.
+              </p>
+              <footer class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Django</span>
+                <span class="tag">PostgreSQL</span>
+              </footer>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <article class="timeline-content">
+              <header>
+                <h3>Estagiário de Desenvolvimento</h3>
+                <div class="company">
+                  <!-- <img src="./img/companies/startupabc.png" alt="StartupABC" class="company-logo"> -->
+                  <span class="company-name">StartupABC</span>
+                </div>
+                <time class="period" datetime="2023-08/2023-12"
+                  >Ago 2023 - Dez 2023</time
+                >
+              </header>
+              <p>
+                Participação no desenvolvimento de sistema web para gestão de
+                vendas. Foco em frontend com JavaScript vanilla e CSS.
+              </p>
+              <footer class="tech-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">PHP</span>
+              </footer>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <article class="timeline-content">
+              <header>
+                <h3>Projeto Freelance</h3>
+                <div class="company">
+                  <!-- <img src="./img/companies/cliente-local.png" alt="Cliente Local" class="company-logo"> -->
+                  <span class="company-name">Cliente Local</span>
+                </div>
+                <time class="period" datetime="2023-05/2023-07"
+                  >Mai 2023 - Jul 2023</time
+                >
+              </header>
+              <p>
+                Criação de website institucional para pequena empresa local.
+                Design responsivo e otimização SEO.
+              </p>
+              <footer class="tech-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">CSS</span>
+                <span class="tag">SEO</span>
+              </footer>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <article class="timeline-content">
+              <header>
+                <h3>Estagiário de Desenvolvimento</h3>
+                <span class="company">StartupABC</span>
+                <time class="period" datetime="2023-08/2023-12"
+                  >Ago 2023 - Dez 2023</time
+                >
+              </header>
+              <p>
+                Participação no desenvolvimento de sistema web para gestão de
+                vendas. Foco em frontend com JavaScript vanilla e CSS.
+              </p>
+              <footer class="tech-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">PHP</span>
+              </footer>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <article class="timeline-content">
+              <header>
+                <h3>Projeto Freelance</h3>
+                <span class="company">Cliente Local</span>
+                <time class="period" datetime="2023-05/2023-07"
+                  >Mai 2023 - Jul 2023</time
+                >
+              </header>
+              <p>
+                Criação de website institucional para pequena empresa local.
+                Design responsivo e otimização SEO.
+              </p>
+              <footer class="tech-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">CSS</span>
+                <span class="tag">SEO</span>
+              </footer>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <!-- <section class="projects">
+        <article>
+          <img src="##" alt="Projeto 1" />
+          <h4>Título e nome do projeto</h4>
+          <p>Data de envolvimento</p>
+        </article>
+        <article>
+          <img src="##" alt="Projeto 2" />
+          <h4>Título e nome do projeto</h4>
+          <p>Data de envolvimento</p>
+        </article>
+        <article>
+          <img src="##" alt="Projeto 3" />
+          <h4>Título e nome do projeto</h4>
+          <p>Data de envolvimento</p>
+        </article>
+        <article>
+          <img src="##" alt="Projeto 4" />
+          <h4>Título e nome do projeto</h4>
+          <p>Data de envolvimento</p>
+        </article>
+      </section> -->
+
+      <section class="skills"></section>
     </main>
 
+    <footer>© 2025 Ruan Anjos. Todos os direitos reservados.</footer>
     <script src="scripts/particles/particles.min.js"></script>
     <script src="scripts/app.js"></script>
   </body>

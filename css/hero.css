@@ -98,27 +98,27 @@ canvas {
   margin-bottom: 1rem;
 }
 
-.developer-text {
+#developer-text {
   color: var(--primary-green);
   text-shadow: 0 0 10px var(--green-glow-light);
 }
 
-.fullstack-text {
+#fullstack-text {
   color: var(--primary-blue);
   text-shadow: 0 0 10px var(--blue-glow-light);
 }
 
-.developer-text,
-.fullstack-text {
+#developer-text,
+#fullstack-text {
   transition: var(--transition-smooth);
 }
 
-.developer-text:hover {
+#developer-text:hover {
   color: var(--primary-green);
   text-shadow: 0 0 20px var(--green-glow-medium);
 }
 
-.fullstack-text:hover {
+#fullstack-text:hover {
   color: var(--primary-blue);
   text-shadow: 0 0 20px var(--blue-glow-medium);
 }

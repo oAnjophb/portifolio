@@ -5,23 +5,26 @@
 :root {
   --primary-green: #00ff88;
   --primary-blue: #00d4ff;
-  
+
   --main-background: #111;
+  --secondary-background: #080808;
   --header-background: rgba(0, 0, 0, 0.3);
   --nav-background: rgba(0, 0, 0, 0.95);
-  
+
   --main-text-color: #fff;
-  --white-text: white;
-  
+
   --header-border: rgba(255, 255, 255, 0.1);
-  
+
   --gradient-primary: linear-gradient(45deg, #00ff88, #00d4ff);
-  --gradient-main-content: linear-gradient(135deg, #2e2e2e 0%, #bcbec0 100%);
-  
+  --gradient-main-content: linear-gradient( #000000 0%, #0e0d0d 100%);
+
   --transition-smooth: all 0.3s ease;
   --transition-fast: 0.3s ease;
   --transition-width: width 0.3s ease;
   --transition-transform: transform 0.3s ease;
+
+  --font-primary: "Roboto", sans-serif;
+  --font-secondary: "Roboto Serif", serif;
 }
 
 * {
@@ -31,9 +34,14 @@
 
   text-decoration: none;
   list-style: none;
+
+  scroll-behavior: smooth;
 }
 
-html,
+html {
+  scroll-padding-top: 100px;
+}
+
 body {
   width: 100%;
   background: var(--main-background);
@@ -41,7 +49,7 @@ body {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -82,8 +90,6 @@ body {
   backdrop-filter: blur(10px);
   padding: 2rem 0;
   gap: 1rem;
-  height: calc(100vh - 70px);
-  overflow-y: auto;
 }
 
 .nav-menu.active {
@@ -135,7 +141,7 @@ body {
 }
 
 .download-cv a {
-  color: var(--white-text);
+  color: var(--main-text-color);
   font-size: 1.1rem;
   padding: 1rem 0;
   display: block;
@@ -188,9 +194,175 @@ body {
   border: 0;
 }
 
-.main-content {
-  background: var(--gradient-main-content);
+/* MAIN CONTENT */
+
+main {
   min-height: 100vh;
   position: relative;
   z-index: 10;
+}
+
+.start {
+  background: var(--gradient-main-content);
+      padding: 1.25rem;
+      max-width: 800px;
+}
+.experience {
+  background: var(--secondary-background);
+  padding: 1.25rem;
+  max-width: 800px;
+}
+
+.start h2, .experience h2 {
+  margin: 20px auto;
+  padding-bottom: 5px;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--main-text-color);
+  text-align: center;
+  position: relative;
+}
+
+.start h2::after, .experience h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height: 3px;
+  background: #00ff88;
+}
+
+.start #about {
+  color: var(--primary-green);
+}
+
+.start figure img {
+  display: flex;
+  align-items: center;
+  max-width: 18rem;
+  margin: 1rem auto;
+  border-radius: 10%;
+  border: 2px solid #ffffff;
+}
+
+.start p {
+  font: var(--font-secondary);
+  color: var(--main-text-color);
+  margin-top: 5rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  list-style: none;
+  counter-reset: timeline-counter;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary-green), var(--primary-blue));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+  counter-increment: timeline-counter;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--main-background);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content header {
+  margin-bottom: 1rem;
+}
+
+.timeline-content h3 {
+  color: var(--main-text-color);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-name {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.company-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px;
+}
+
+.period {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  display: block;
+}
+
+.timeline-content p {
+  color: var(--main-text-color);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.timeline-content footer {
+  margin-top: 1rem;
+}
+
+.tech-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--main-text-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
 }

@@ -3,19 +3,19 @@
    ========================================================================== */
 
 :root {
-  --primary-green: #00ff88;
-  --primary-blue: #00d4ff;
+  --text-color: #fff; /* Texto padrão */
+  --main-text-color: #faea5d88;
+  --primary-yellow: #faea5d;
+  --secondary-yellow: #f5d842;
 
   --main-background: #111;
   --secondary-background: #080808;
   --header-background: rgba(0, 0, 0, 0.3);
   --nav-background: rgba(0, 0, 0, 0.95);
 
-  --main-text-color: #fff;
-
   --header-border: rgba(255, 255, 255, 0.1);
 
-  --gradient-primary: linear-gradient(45deg, #00ff88, #00d4ff);
+  --gradient-primary: linear-gradient(45deg, #faea5d, #f5d842);
   --gradient-main-content: linear-gradient(#000000 0%, #0e0d0d 100%);
 
   --transition-smooth: all 0.3s ease;
@@ -126,7 +126,7 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--primary-green);
+  color: var(--primary-yellow);
 }
 
 .nav-link::after {
@@ -180,7 +180,7 @@ body {
 }
 
 .menu-toggle:focus {
-  outline: 2px solid var(--primary-green);
+  outline: 2px solid var(--primary-yellow);
   outline-offset: 2px;
 }
 
@@ -233,7 +233,7 @@ main {
   padding-bottom: 5px;
   font-size: 2rem;
   margin-bottom: 3rem;
-  color: var(--main-text-color);
+  color: var(--text-color);
   text-align: center;
   position: relative;
 }
@@ -247,11 +247,11 @@ main {
   transform: translateX(-50%);
   width: 25%;
   height: 3px;
-  background: #00ff88;
+  background: var(--primary-yellow);
 }
 
 .start #about {
-  color: var(--primary-green);
+  color: var(--primary-yellow);
 }
 
 .start figure img {
@@ -266,7 +266,7 @@ main {
 .start p {
   font-family: var(--font-primary);
   font-size: 1.05rem;
-  color: var(--main-text-color);
+  color: var(--text-color);
   margin-top: 5rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -289,8 +289,8 @@ main {
   width: 2px;
   background: linear-gradient(
     to bottom,
-    var(--primary-green),
-    var(--primary-blue)
+    var(--primary-yellow),
+    var(--secondary-yellow)
   );
 }
 

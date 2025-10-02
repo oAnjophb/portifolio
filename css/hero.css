@@ -3,19 +3,19 @@
    ========================================================================== */
 
 :root {
-  --primary-green: #00ff88;
-  --primary-blue: #00d4ff;
+  --text-color: #fff; /* Texto padrão */
+  --main-text-color: #faea5d88;
+  --primary-yellow: #faea5d;
+  --secondary-yellow: #f5d842;
   --main-background: #000000;
-  --main-text-color: #ffffff;
   --secondary-text-color: rgba(255, 255, 255, 0.9);
   
-  --gradient-primary: linear-gradient(45deg, var(--primary-green), var(--primary-blue));
+  --gradient-primary: linear-gradient(45deg, var(--primary-yellow), var(--secondary-yellow));
   
-  --green-glow-light: rgba(0, 255, 136, 0.5);
-  --green-glow-medium: rgba(0, 255, 136, 0.8);
-  --green-glow-strong: rgba(0, 255, 136, 0.3);
-  --blue-glow-light: rgba(0, 212, 255, 0.5);
-  --blue-glow-medium: rgba(0, 212, 255, 0.8);
+  --yellow-glow-light: rgba(250, 234, 93, 0.5);
+  --yellow-glow-medium: rgba(250, 234, 93, 0.8);
+  --yellow-glow-strong: rgba(250, 234, 93, 0.3);
+  --yellow-glow-secondary: rgba(245, 216, 66, 0.5);
   
   --button-text-color: #000000;
   
@@ -70,16 +70,15 @@ canvas {
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #00ff88, #00d4ff);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 #apresentation {
-  color: var(--main-text-color);
   background: none;
-  -webkit-text-fill-color: var(--main-text-color);
+  -webkit-text-fill-color: var(--text-color);
   font-size: 2rem;
   font-weight: 400;
   display: block;
@@ -99,13 +98,13 @@ canvas {
 }
 
 #developer-text {
-  color: var(--primary-green);
-  text-shadow: 0 0 10px var(--green-glow-light);
+  color: var(--primary-yellow);
+  text-shadow: 0 0 10px var(--yellow-glow-light);
 }
 
 #fullstack-text {
-  color: var(--primary-blue);
-  text-shadow: 0 0 10px var(--blue-glow-light);
+  color: var(--secondary-yellow);
+  text-shadow: 0 0 10px var(--yellow-glow-secondary);
 }
 
 #developer-text,
@@ -114,13 +113,13 @@ canvas {
 }
 
 #developer-text:hover {
-  color: var(--primary-green);
-  text-shadow: 0 0 20px var(--green-glow-medium);
+  color: var(--primary-yellow);
+  text-shadow: 0 0 20px var(--yellow-glow-medium);
 }
 
 #fullstack-text:hover {
-  color: var(--primary-blue);
-  text-shadow: 0 0 20px var(--blue-glow-medium);
+  color: var(--secondary-yellow);
+  text-shadow: 0 0 20px var(--yellow-glow-secondary);
 }
 .cta-button {
   background: var(--gradient-primary);
@@ -138,5 +137,5 @@ canvas {
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px var(--green-glow-strong);
+  box-shadow: 0 10px 20px var(--yellow-glow-strong);
 }

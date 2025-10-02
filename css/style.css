@@ -23,8 +23,8 @@
   --transition-width: width 0.3s ease;
   --transition-transform: transform 0.3s ease;
 
-  --font-primary: "Roboto", sans-serif;
-  --font-secondary: "Roboto Serif", serif;
+  --font-primary: 'SF Pro Display', 'Segoe UI', sans-serif
+  --font-secondary: 'Roboto Serif', serif;
 }
 
 * {
@@ -248,9 +248,12 @@ main {
 }
 
 .start p {
-  font: var(--font-secondary);
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
   color: var(--main-text-color);
   margin-top: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .timeline {

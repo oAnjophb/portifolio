@@ -93,3 +93,83 @@ particlesJS('particles-js',
   }
 
 );
+
+// Funcionalidade do menu hamburger
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Função para toggle do menu
+    function toggleMenu() {
+        const isOpen = hamburger.classList.contains('active');
+        
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        
+        // Atualiza atributos ARIA
+        hamburger.setAttribute('aria-expanded', !isOpen);
+        hamburger.setAttribute('aria-label', !isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+    }
+
+    // Função para fechar o menu
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
+    }
+
+    // Toggle do menu ao clicar no hamburger
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Fecha o menu ao clicar em um link
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Navegar pelo menu com teclado
+    document.addEventListener('keydown', function(e) {
+        // Fecha o menu ao pressionar ESC
+        if (e.key === 'Escape') {
+            closeMenu();
+            hamburger.focus(); // Retorna o foco para o botão
+        }
+        
+        // Navegar pelos links com Tab no menu aberto
+        if (navMenu.classList.contains('active')) {
+            const focusableElements = navMenu.querySelectorAll('a[href]');
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            if (e.key === 'Tab') {
+                // Se estiver no último elemento e pressionar Tab, vai para o primeiro
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+                // Se estiver no primeiro elemento e pressionar Shift+Tab, vai para o último
+                else if (!e.shiftKey && document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
+    });
+
+    // Ao redimensionar a tela, fecha o menu se estiver aberto
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+            closeMenu();
+        }
+    });
+});

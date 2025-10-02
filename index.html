@@ -19,8 +19,8 @@
           <div class="logo">
             <a href="#"><img src="./img/logo.png" alt="Logo" /></a>
           </div>
-          <nav class="navbar">
-            <ul class="nav-menu">
+          <nav class="navbar" role="navigation" aria-label="Menu principal">
+            <ul class="nav-menu" id="nav-menu">
               <li class="nav-item">
                 <a href="#sobre" class="nav-link">Sobre mim</a>
               </li>
@@ -37,16 +37,23 @@
                 <a
                   href="./docs/Curriculum Vitae - Desenvolvedor Software.pdf"
                   download
+                  aria-label="Baixar currículo em PDF"
                   >Baixar CV</a
                 >
               </li>
             </ul>
           </nav>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
+          <button 
+            class="hamburger" 
+            id="hamburger-btn"
+            aria-label="Abrir menu de navegação"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            type="button">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+          </button>
         </div>
       </header>
 
@@ -58,7 +65,7 @@
       </div>
     </section>
 
-    <main class="main-content"></main>
+    <!-- <main class="main-content"></main> -->
 
     <script src="scripts/particles/particles.min.js"></script>
     <script src="scripts/app.js"></script>

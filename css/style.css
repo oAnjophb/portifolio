@@ -412,29 +412,17 @@ main {
   flex-wrap: wrap;
 }
 
-.tag {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--main-text-color);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
+.logo {
+  margin-right: auto;
+  margin-left: 2rem;
 }
 
-.github-btn {
-  display: inline-flex;
+.navbar {
+  display: flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.3rem 0.6rem;
-  background: var(--secondary-background);
-  border: 1px solid var(--primary-yellow);
-  border-radius: 4px;
-  color: var(--primary-yellow);
-  text-decoration: none;
-  font-size: 0.75rem;
-  transition: var(--transition-smooth);
-  white-space: nowrap;
+  margin-left: auto;
+  margin-right: 2rem;
+  height: 100%;
 }
 
 .github-btn:hover {
@@ -625,10 +613,6 @@ main {
   gap: 1rem;
 }
 
-/* =============================================================================
-Contact Section Styles
-========================================================================== */
-
 .contact {
   padding: 4rem 1rem;
   background: var(--gradient-experience-content);
@@ -801,4 +785,91 @@ Contact Section Styles
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
   opacity: 0.8;
+}
+
+@media (min-width: 900px) {
+  .nav-link.active {
+    color: var(--main-text-color) !important;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    max-width: 1200px;
+  }
+  .logo {
+    margin-right: 50px;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 100%;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-end;
+    position: static;
+    background: none;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .start,
+  .experience {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .projects-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    padding: 0;
+  }
+
+  .project-content {
+    flex: 1 1 350px;
+    min-width: 350px;
+    max-width: 400px;
+  }
+
+  .skills-container {
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1200px;
+  }
+
+  .skill-category {
+    flex: 1 1 300px;
+    min-width: 300px;
+    max-width: 400px;
+  }
+
+  .contact-container {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 900px;
+  }
+
+  .contact-info,
+  .social-media {
+    flex: 1 1 350px;
+    min-width: 350px;
+    max-width: 400px;
+  }
 }

@@ -406,11 +406,6 @@ main {
   margin-top: 1rem;
 }
 
-.tech-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
 
 .logo {
   margin-right: auto;
@@ -602,6 +597,32 @@ main {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  padding: 0.5rem 0 0.2rem 0;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  background: rgba(250, 234, 93, 0.07);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  justify-content: flex-start;
+}
+/* Tech Tag estilização */
+.tech-tags .tag {
+  display: inline-block;
+  background: linear-gradient(90deg, #faea5d 60%, #f5d842 100%);
+  color: #222;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  margin: 0.15rem 0.2rem;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.07);
+  border: 1px solid #faea5d88;
+  letter-spacing: 0.03em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tech-tags .tag:hover {
+  transform: scale(1.08);
+  box-shadow: 0 2px 12px 0 rgba(250,234,93,0.15);
+  background: linear-gradient(90deg, #f5d842 60%, #faea5d 100%);
 }
 
 .project-footer {
